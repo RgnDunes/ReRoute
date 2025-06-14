@@ -8,7 +8,7 @@ A modern Chrome Extension that allows you to define URL redirect rules and autom
 
 <img width="1512" alt="Screenshot 2025-06-15 at 2 02 57 AM" src="https://github.com/user-attachments/assets/800310e9-7bec-4d72-8e07-3f5e0a7502c7" />
 
-<img width="1512" alt="Screenshot 2025-06-15 at 2 02 57 AM" src="https://github.com/user-attachments/assets/7d556163-2694-49dd-95e8-ff16f16fbdcd" />
+<img width="1512" alt="Screenshot 2025-06-15 at 2 03 04 AM" src="https://github.com/user-attachments/assets/156644a5-3fd1-490b-95fa-f7703a83606c" />
 
 <img width="1512" alt="Screenshot 2025-06-15 at 2 03 19 AM" src="https://github.com/user-attachments/assets/00abd67f-5c06-4c81-8c07-4b0035123426" />
 
