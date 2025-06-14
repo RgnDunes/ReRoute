@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1687452369123",
+    "description": "Redirect Google Search to DuckDuckGo",
+    "patternType": "Wildcard",
+    "appliesTo": "Main window",
+    "includePattern": "https://www.google.com/search?q=*",
+    "redirectTo": "https://duckduckgo.com/?q=$1",
+    "exampleUrl": "https://www.google.com/search?q=privacy",
+    "enabled": true
+  },
+  {
+    "id": "1687452369124",
+    "description": "Redirect Twitter to Nitter",
+    "patternType": "RegExp",
+    "appliesTo": "Main window",
+    "includePattern": "https://twitter.com/([^/]+)(?:/status/(\\d+))?",
+    "redirectTo": "https://nitter.net/$1/$2",
+    "exampleUrl": "https://twitter.com/username/status/1234567890",
+    "enabled": true
+  },
+  {
+    "id": "1687452369125",
+    "description": "Redirect YouTube to Invidious",
+    "patternType": "RegExp",
+    "appliesTo": "Main window",
+    "includePattern": "https://(?:www\\.)?youtube\\.com/watch\\?v=([\\w-]+)",
+    "redirectTo": "https://invidious.io/watch?v=$1",
+    "exampleUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "enabled": false
+  },
+  {
+    "id": "1687452369126",
+    "description": "Redirect Reddit to Libreddit",
+    "patternType": "Wildcard",
+    "appliesTo": "Main window",
+    "includePattern": "https://www.reddit.com/*",
+    "redirectTo": "https://libreddit.de/$1",
+    "exampleUrl": "https://www.reddit.com/r/privacy",
+    "enabled": true
+  }
+]
