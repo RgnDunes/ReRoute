@@ -32,6 +32,21 @@ A modern Chrome Extension that allows you to define URL redirect rules and autom
 - **Dark Mode Support**
   - Choose between light and dark themes
 
+## Use Cases
+
+- **Privacy Enhancement**: Redirect from tracking-heavy sites to privacy-friendly alternatives
+
+  - Google Search → DuckDuckGo
+  - Twitter → Nitter
+  - YouTube → Invidious
+  - Reddit → Libreddit
+
+- **Development and Testing**: Automatically redirect between development, staging, and production environments
+
+- **URL Cleanup**: Remove tracking parameters from URLs
+
+- **Custom Shortcuts**: Create your own URL shortening system with memorable patterns
+
 ## Installation
 
 ### From Chrome Web Store
@@ -77,13 +92,28 @@ _(Coming soon)_
 - Example URL: `https://twitter.com/username`
 - Result: `https://nitter.net/username`
 
+#### Advanced Regular Expression Pattern
+
+- Pattern: `https://(?:www\.)?youtube\.com/watch\?v=([a-zA-Z0-9_-]+)(?:&.*)?`
+- Redirect: `https://invidious.io/watch?v=$1`
+- Example URL: `https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=recommended`
+- Result: `https://invidious.io/watch?v=dQw4w9WgXcQ`
+
+### Managing Rules
+
+- **Enable/Disable**: Toggle the switch next to each rule
+- **Edit**: Click the pencil icon to modify a rule
+- **Delete**: Click the trash icon to remove a rule
+- **Reorder**: Use the up/down arrows to change rule priority
+
 ## Permissions
 
 This extension requires the following permissions:
 
 - `tabs`: To access tab URLs
-- `webNavigation`: To intercept and redirect navigation
 - `storage`: To store your redirect rules
+- `declarativeNetRequest`: To implement URL redirection
+- `declarativeNetRequestWithHostAccess`: To apply redirects to specific hosts
 - `<all_urls>`: To redirect any URL
 
 ## Privacy
@@ -91,7 +121,55 @@ This extension requires the following permissions:
 - All data is stored locally in your browser
 - No data is sent to any external servers
 - Optional sync uses Chrome's built-in sync service
+- No tracking or analytics
+
+## Troubleshooting
+
+### Rules Not Working
+
+- Ensure the rule is enabled (toggle switch is on)
+- Check that the pattern correctly matches the URL you're visiting
+- Verify that higher priority rules aren't overriding your rule
+- Try using the "Test" button with an example URL
+
+### Import/Export Issues
+
+- Ensure your JSON file follows the correct format
+- Check that all required fields are present in each rule
+
+## Development
+
+### Building from Source
+
+1. Clone the repository: `git clone https://github.com/yourusername/reroute.git`
+2. Install dependencies: `npm install`
+3. Generate icons: `npm run build`
+4. Load the extension in Chrome
+
+### Project Structure
+
+- `manifest.json`: Extension configuration
+- `background.js`: Core redirect functionality
+- `popup.html/js`: Quick access popup interface
+- `options.html/js`: Rule management interface
+- `css/`: Stylesheets for the UI
+- `icons/`: Extension icons
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
 ## License
 
 MIT License
+
+## Acknowledgments
+
+- Inspired by the original Redirector extension
+- Thanks to all contributors and users
