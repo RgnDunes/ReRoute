@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReRoute - Manage Rules</title>
+    <link rel="stylesheet" href="css/options.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo-container">
+          <h1>ReRoute</h1>
+          <p class="subtitle">URL Redirect Manager</p>
+        </div>
+        <div class="header-actions">
+          <div class="toggle-container">
+            <span>Dark Mode</span>
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="toggle-container">
+            <span>Sync Rules</span>
+            <label class="switch">
+              <input type="checkbox" id="syncToggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="actions-bar">
+          <button id="addRuleBtn" class="btn primary">
+            <span class="icon">+</span> Add Rule
+          </button>
+          <div class="import-export">
+            <button id="exportRulesBtn" class="btn secondary">
+              Export Rules
+            </button>
+            <button id="importRulesBtn" class="btn secondary">
+              Import Rules
+            </button>
+            <input
+              type="file"
+              id="importFileInput"
+              accept=".json"
+              style="display: none"
+            />
+          </div>
+        </div>
+
+        <div id="ruleEditor" class="rule-editor hidden">
+          <h2 id="editorTitle">Add New Rule</h2>
+          <form id="ruleForm">
+            <input type="hidden" id="ruleId" />
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input
+                type="text"
+                id="description"
+                placeholder="E.g., Redirect Google to DuckDuckGo"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="patternType">Pattern Type</label>
+                <select id="patternType">
+                  <option value="Wildcard">Wildcard</option>
+                  <option value="RegExp">Regular Expression</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="appliesTo">Applies To</label>
+                <select id="appliesTo">
+                  <option value="Main window">Main window</option>
+                  <option value="IFrames">IFrames</option>
+                  <option value="All">All</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="includePattern">Include Pattern</label>
+              <input
+                type="text"
+                id="includePattern"
+                placeholder="E.g., https://www.google.com/search?q=*"
+                required
+              />
+              <p class="help-text">
+                Use * as wildcard or regular expression patterns
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label for="redirectTo">Redirect To</label>
+              <input
+                type="text"
+                id="redirectTo"
+                placeholder="E.g., https://duckduckgo.com/?q=$1"
+                required
+              />
+              <p class="help-text">
+                Use $1, $2, etc. to reference captured groups
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleUrl">Example URL</label>
+              <input
+                type="text"
+                id="exampleUrl"
+                placeholder="E.g., https://www.google.com/search?q=privacy"
+              />
+            </div>
+
+            <div class="form-group preview-group">
+              <label>Preview Result</label>
+              <div class="preview-container">
+                <div id="previewResult" class="preview-result">-</div>
+                <button type="button" id="testPreviewBtn" class="btn secondary">
+                  Test
+                </button>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" id="cancelBtn" class="btn secondary">
+                Cancel
+              </button>
+              <button type="submit" id="saveRuleBtn" class="btn primary">
+                Save Rule
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div id="rulesList" class="rules-list">
+          <div class="rules-header">
+            <div class="rule-status">Status</div>
+            <div class="rule-description">Description</div>
+            <div class="rule-pattern">Pattern</div>
+            <div class="rule-redirect">Redirect To</div>
+            <div class="rule-actions">Actions</div>
+          </div>
+
+          <div id="rulesContainer"></div>
+
+          <div id="emptyRulesMessage" class="empty-message hidden">
+            <p>No redirect rules defined yet.</p>
+            <p>Click "Add Rule" to create your first redirect rule.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>ReRoute - URL Redirect Manager</p>
+      </footer>
+    </div>
+
+    <script src="js/options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+# Node.js dependencies
+node_modules/
+
+# Generated PNG icons (can be regenerated)
+icons/icon16.png
+icons/icon48.png
+icons/icon128.png
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-*
+
+# Logs
+*.log
+npm-debug.log* 

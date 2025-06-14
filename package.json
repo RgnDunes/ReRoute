@@ -1,0 +1,14 @@
+{
+  "name": "reroute-extension",
+  "version": "1.0.0",
+  "description": "A Chrome extension for URL redirection",
+  "scripts": {
+    "generate-icons": "node generate-icons.js",
+    "build": "npm run generate-icons"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sharp": "^0.32.6"
+  }
+}

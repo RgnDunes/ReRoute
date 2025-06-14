@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReRoute</title>
+    <link rel="stylesheet" href="css/popup.css" />
+  </head>
+  <body>
+    <div class="popup-container">
+      <header>
+        <h1>ReRoute</h1>
+        <div class="toggle-container">
+          <span>Dark Mode</span>
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </header>
+
+      <div class="rules-summary">
+        <h2>
+          Active Rules: <span id="activeRulesCount">0</span>/<span
+            id="totalRulesCount"
+            >0</span
+          >
+        </h2>
+        <button id="addRuleBtn" class="btn primary">Add New Rule</button>
+      </div>
+
+      <div class="recent-redirects">
+        <h3>Recent Redirects</h3>
+        <div id="recentRedirectsList" class="recent-list">
+          <p class="empty-message">No recent redirects</p>
+        </div>
+      </div>
+
+      <footer>
+        <button id="openOptionsBtn" class="btn secondary">
+          Manage All Rules
+        </button>
+      </footer>
+    </div>
+    <script src="js/popup.js"></script>
+  </body>
+</html>
