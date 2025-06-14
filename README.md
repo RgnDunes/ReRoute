@@ -2,6 +2,16 @@
 
 A modern Chrome Extension that allows you to define URL redirect rules and automatically apply them when matching URLs are visited.
 
+<img width="370" alt="Screenshot 2025-06-15 at 2 02 44 AM" src="https://github.com/user-attachments/assets/19a956af-e0d7-4109-885f-a0df0633ae13" />
+
+<img width="365" alt="Screenshot 2025-06-15 at 2 02 49 AM" src="https://github.com/user-attachments/assets/201cbf49-e5a7-4d90-b896-b19c9d162452" />
+
+<img width="1512" alt="Screenshot 2025-06-15 at 2 02 57 AM" src="https://github.com/user-attachments/assets/800310e9-7bec-4d72-8e07-3f5e0a7502c7" />
+
+<img width="1512" alt="Screenshot 2025-06-15 at 2 02 57 AM" src="https://github.com/user-attachments/assets/7d556163-2694-49dd-95e8-ff16f16fbdcd" />
+
+<img width="1512" alt="Screenshot 2025-06-15 at 2 03 19 AM" src="https://github.com/user-attachments/assets/00abd67f-5c06-4c81-8c07-4b0035123426" />
+
 ## Features
 
 - **Create, Edit, and Delete Redirect Rules**
